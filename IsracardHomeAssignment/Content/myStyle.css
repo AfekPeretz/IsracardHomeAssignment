@@ -1,0 +1,42 @@
+﻿body {
+}
+
+section{
+
+    
+    margin-top:50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+section input {
+    margin-top: 15px;
+    display: block;
+}
+
+input[type="text"]{
+    width:300px;
+    
+}
+input[value="firstPage"] {
+    margin-left: 0;
+    margin-bottom: 0;
+}
+input[value="lastPage"] {
+    margin-right: 0;
+    margin-bottom: 0;
+}
+.btn-container input{
+    margin-top:50px;
+    display: inline;
+    width: 23%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.mycard {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+}

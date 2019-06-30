@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "GitHub Search";
+}
+
+
+
+<!DOCTYPE html>
+<html ng-app="myApplication" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="~/Content/myStyle.css" rel="stylesheet" />
+</head>
+
+<body ng-controller="GitController">
+
+   
+
+    <header>
+         <h1><img src="~/Images/githublogo.png" /> GitHub Repository Search</h1>
+        <h6>Here are the instructions of how to search</h6>
+        <ol>
+            <li>Type the name of the subject your looking for a reposetory in.</li>
+            <li> Click Search</li>
+        </ol>
+    </header>
+<section>
+    <div class="search-container">
+        <lable>Type Your search: </lable>
+
+        <input type="text" name="reposetoryName" ng-model="repoToSearch" ng-keyup=" $event.keyCode == 13 && saveRepo()" placeholder="Enter Reposetory Name" />
+
+
+        <input type="submit" name="searchButton" ng-click="saveRepo()" value="Search" />
+
+       
+    </div>
+</section>
+<div class="btn-container">
+
+    
+    <input type="button" name="firstPage" value="First" ng-show="firstPage" ng-click="saveRepo(firstPage)" class="btn btn-dark" />
+    <input type="button" name="nextPage" value="Next" ng-show="nextPage" ng-click="saveRepo(nextPage)" class="btn btn-outline-success" />
+    <input type="button" name="prevPage" value="Prev" ng-show="prevPage" ng-click="saveRepo(prevPage)" class="btn btn-outline-danger" />
+    <input type="button" name="lastPage" value="Last" ng-show="lastPage" ng-click="saveRepo(lastPage)" class="btn btn-dark" />
+</div>
+    
+<div id="items-container">
+
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.0/angular.js"></script>
+    <script src="~/Scripts/AngularController/app.js"></script>
+    <script src="~/Scripts/AngularController/AngularController.js"></script>
+</body>
+
+</html>
